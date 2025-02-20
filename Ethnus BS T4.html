@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Material Cards</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            font-family: sans-serif;
+            background-color: #f8f9fa; /* Light gray background */
+        }
+        .card {
+            border: none; /* Remove default border */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
+            transition: transform 0.2s; /* Smooth hover effect */
+            margin-bottom: 20px; /* Space between cards */
+        }
+        .card:hover {
+            transform: scale(1.02); /* Slightly enlarge on hover */
+        }
+        .card-img-top {
+            object-fit: cover; /* Ensure image covers the area */
+            height: 200px; /* Set a fixed height for the image */
+        }
+        .card-title {
+            font-weight: 600;
+        }
+        .card-text {
+            color: #555; /* Slightly darker text */
+        }
+        .card-footer {
+            background-color: transparent; /* Make footer background transparent */
+            border-top: none; /* Remove top border */
+            padding: 1rem 0; /* Adjust padding */
+            text-align: center; /* Center the links */
+        }
+        .card-link {
+            color: #007bff; /* Blue link color */
+            margin: 0 10px; /* Space between links */
+        }
+        /* Make cards responsive */
+        @media (min-width: 768px) {
+            .card-deck .card {
+                margin-bottom: 0; /* Remove bottom margin on larger screens */
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="card-deck">
+            <div class="card">
+                <img src="https://via.placeholder.com/400x200/007bff/FFFFFF" class="card-img-top" alt="Card 1">
+                <div class="card-body">
+                    <h5 class="card-title">MATERIAL CARDS</h5>
+                    <p class="card-text">Cards for display in portfolio style material design by Google.</p>
+                </div>
+                <div class="card-footer">
+                    <a href="#" class="card-link">LINK</a>
+                    <a href="#" class="card-link">LINK</a>
+                </div>
+            </div>
+            <div class="card">
+                <img src="https://via.placeholder.com/400x200/007bff/FFFFFF" class="card-img-top" alt="Card 2">
+                <div class="card-body">
+                    <h5 class="card-title">MATERIAL CARDS</h5>
+                    <p class="card-text">Cards for display in portfolio style material design by Google.</p>
+                </div>
+                <div class="card-footer">
+                    <a href="#" class="card-link">LINK.</a>
+                    <a href="#" class="card-link">LINK.</a>
+                </div>
+            </div>
+            <div class="card">
+                <img src="https://via.placeholder.com/400x200/007bff/FFFFFF" class="card-img-top" alt="Card 3">
+                <div class="card-body">
+                    <h5 class="card-title">MATERIAL CARDS.</h5>
+                    <p class="card-text">Cards for display in portfolio style material design by Google.</p>
+                </div>
+                <div class="card-footer">
+                    <a href="#" class="card-link">LINK.</a>
+                    <a href="#" class="card-link">LINK.</a>
+                </div>
+            </div>
+            <div class="card">
+                <img src="https://via.placeholder.com/400x200/007bff/FFFFFF" class="card-img-top" alt="Card 4">
+                <div class="card-body">
+                    <h5 class="card-title">MATERIAL CARDS</h5>
+                    <p class="card-text">Cards for display in portfolio style material design by Google.</p>
+                </div>
+                <div class="card-footer">
+                    <a href="#" class="card-link">LINK</a>
+                    <a href="#" class="card-link">LINK</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

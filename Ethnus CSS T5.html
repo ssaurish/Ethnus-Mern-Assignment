@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My First Styled Page</title>
+    <style>
+        body {
+            font-family: sans-serif; /* Use a default sans-serif font */
+            background-color: #ccff99; /* Light yellowish green background */
+            margin: 0; /* Remove default body margins */
+            padding: 20px; /* Add some padding around the content */
+        }
+
+        .container {
+            display: flex; /* Use flexbox for layout */
+            max-width: 800px; /* Set a maximum width for the container */
+            margin: 0 auto; /* Center the container horizontally */
+            background-color: #ffffcc; /* Light yellow background for the container */
+            padding: 20px;
+            border: 1px dashed black; /* Dashed black border */
+        }
+
+        .nav {
+            width: 200px; /* Set a width for the navigation section */
+            margin-right: 20px; /* Add spacing between nav and content */
+        }
+
+        .nav ul {
+            list-style: none; /* Remove bullet points from the list */
+            padding: 0;
+        }
+
+        .nav li {
+            margin-bottom: 10px; /* Add spacing between list items */
+        }
+
+        .nav a {
+            text-decoration: none; /* Remove underlines from links */
+            color: #003300; /* Dark green link color */
+            font-weight: bold;
+        }
+        .nav a:before { /* Add the black square before each link */
+            content: "\25A0  "; /* Unicode character for a black square */
+        }
+
+        .content {
+            flex: 1; /* Allow content to take up remaining space */
+        }
+
+        h1 {
+            color: #6600cc; /* Purple heading color */
+        }
+
+        .date {
+            font-style: italic;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="nav">
+            <ul>
+                <li><a href="#">Home page</a></li>
+                <li><a href="#">Musings</a></li>
+                <li><a href="#">My town</a></li>
+                <li><a href="#">Links</a></li>
+            </ul>
+        </div>
+        <div class="content">
+            <h1>My first styled page</h1>
+
+            <p>Welcome to my styled page!</p>
+
+            <p>It lacks images, but at least it has style. And it has links, even if they don't go anywhere...</p>
+
+            <p>There should be more here, but I don't know what yet.</p>
+
+            <p class="date">Made 19th feb 2025<br>by myself.</p>
+        </div>
+    </div>
+
+</body>
+</html>

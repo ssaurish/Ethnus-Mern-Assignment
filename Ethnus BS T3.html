@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pricing Page</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            font-family: sans-serif;
+        }
+
+      .pricing-header {
+            max-width: 700px;
+            margin: 0 auto;
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+      .pricing-box {
+            border: 1px solid #ced4da; /* Light gray border */
+            border-radius: 10px; /* Rounded corners */
+            padding: 40px 20px; /* Padding inside the box */
+            text-align: center;
+            margin-bottom: 20px; /* Space between boxes */
+            transition: transform 0.2s; /* Smooth hover effect */
+        }
+
+      .pricing-box:hover {
+            transform: scale(1.05); /* Slightly enlarge on hover */
+        }
+
+      .pricing-title {
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+
+      .pricing-price {
+            font-size: 2rem;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+      .pricing-features {
+            list-style: none;
+            padding: 0;
+            margin-bottom: 30px;
+        }
+
+      .pricing-features li {
+            margin-bottom: 10px;
+        }
+
+      .btn-primary {
+            background-color: #007bff; /* Blue button */
+            border-color: #007bff;
+        }
+
+      .btn-primary:hover {
+            background-color: #0069d9;
+            border-color: #0062cc;
+        }
+
+      .footer {
+            background-color: #f8f9fa; /* Light gray footer */
+            padding: 30px 0;
+            text-align: center;
+        }
+
+      .footer-links {
+            list-style: none;
+            padding: 0;
+        }
+
+      .footer-links li {
+            display: inline;
+            margin: 0 15px;
+        }
+
+      .footer-links a {
+            color: #007bff;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="pricing-header">
+            <h1>Pricing</h1>
+            <p>Quickly build an effective pricing table for your potential customers with this Bootstrap example. It's built with default Bootstrap components and utilities with little customization.</p>
+        </div>
+
+        <div class="row">
+            <div class="col-md-4">
+                <div class="pricing-box">
+                    <div class="pricing-title">Free</div>
+                    <div class="pricing-price">$0/mo</div>
+                    <ul class="pricing-features">
+                        <li>10 users included</li>
+                        <li>2 GB of storage</li>
+                        <li>Email support</li>
+                        <li>Help center access</li>
+                    </ul>
+                    <button class="btn btn-primary">Sign up for free</button>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="pricing-box">
+                    <div class="pricing-title">Pro</div>
+                    <div class="pricing-price">$15/mo</div>
+                    <ul class="pricing-features">
+                        <li>20 users included</li>
+                        <li>10 GB of storage</li>
+                        <li>Priority email support</li>
+                        <li>Help center access</li>
+                    </ul>
+                    <button class="btn btn-primary">Get started</button>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="pricing-box">
+                    <div class="pricing-title">Enterprise</div>
+                    <div class="pricing-price">$29/mo</div>
+                    <ul class="pricing-features">
+                        <li>30 users included</li>
+                        <li>15 GB of storage</li>
+                        <li>Phone and email support</li>
+                        <li>Help center access</li>
+                    </ul>
+                    <button class="btn btn-primary">Contact us</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <p>&copy; 2023 Your Company</p>
+                </div>
+                <div class="col-md-6 text-right">
+                    <ul class="footer-links">
+                        <li><a href="#">Features</a></li>
+                        <li><a href="#">Resources</a></li>
+                        <li><a href="#">About</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

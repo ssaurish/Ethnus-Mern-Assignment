@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clickable Links</title>
+    <style>
+        .container {
+            background-color: lightgray;
+            padding: 20px;
+            border: 1px solid #ccc;
+            width: 500px;
+            margin: 20px auto;
+        }
+        a {
+            color: blue;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <p>Click any of the following links:</p>
+    <a href="https://example.com/new" target="_blank">Opens in New</a> |
+    <a href="https://example.com/self" target="_self">Opens in Self</a> |
+    <a href="https://example.com/parent" target="_parent">Opens in Parent</a> |
+    <a href="https://example.com/body" target="_top">Opens in Body</a> |
+    <a href="mailto:example@example.com">Send email</a>
+</div>
+
+</body>
+</html>

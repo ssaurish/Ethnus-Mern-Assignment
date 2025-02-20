@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hoverable Sidenav Buttons</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            margin: 0; /
+        }
+
+        .container {
+            display: flex; 
+            height: 100vh; }
+
+        .sidenav {
+            width: 200px; 
+            background-color: #f1f1f1; 
+            padding: 20px;
+        }
+
+        .sidenav button {
+            display: block; /* Make buttons stack vertically */
+            width: 100%; /* Make buttons fill sidenav width */
+            padding: 10px;
+            margin-bottom: 10px; /* Add spacing between buttons */
+            border: none; /* Remove default button border */
+            background-color: transparent; /* Make button background transparent */
+            cursor: pointer; /* Add pointer cursor on hover */
+            text-align: left; /* Align text to the left */
+        }
+
+        .sidenav button:hover {
+            background-color: #ddd; /* Add light gray background on hover */
+        }
+
+        .sidenav button.green {
+            color: green;
+        }
+
+        .sidenav button.blue {
+            color: blue;
+        }
+        .sidenav button.red {
+            color: red;
+        }
+        .sidenav button.gray {
+            color: gray;
+        }
+
+
+        .main-content {
+            flex: 1; /* Allow main content to take up remaining space */
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="sidenav">
+            <button class="green">Green</button>
+            <button class="blue">Blue</button>
+            <button class="red">Red</button>
+            <button class="gray">Gray</button>
+        </div>
+        <div class="main-content">
+            <h1>Hoverable Sidenav Buttons</h1>
+            <p>Hover over the buttons in the left side navigation to open them.</p>
+        </div>
+    </div>
+
+</body>
+</html>

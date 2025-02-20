@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Form</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            background-color: #993399; /* Darker purple background */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+        }
+
+        .container {
+            background-color: #330033; /* Darker container background */
+            padding: 30px; /* Increased padding */
+            border-radius: 15px; /* More rounded corners */
+            width: 450px; /* Adjusted width */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* More prominent shadow */
+        }
+
+        h2 {
+            color: #FFFFFF; /* White heading */
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px; /* Increased margin */
+            color: #FFFFFF; /* White labels */
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="password"],
+        input[type="tel"],
+        input[type="number"],
+        select,
+        textarea {
+            width: calc(100% - 16px); 
+            padding: 10px; 
+            margin-bottom: 15px; 
+            border: 1px solid #660066; /* Darker border */
+            border-radius: 5px; /* More rounded corners */
+            background-color: #440044; /* Darker input background */
+            color: #FFFFFF; /* White text in inputs */
+        }
+
+        select {
+            appearance: none;
+            -webkit-appearance: none; /* For Safari */
+            -moz-appearance: none; /* For Firefox */
+            background-image: url("data:image/svg+xml;utf8,<svg fill='white' height='24' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/><path d='M0 0h24v24h-24z' fill='none'/></svg>"); /* Custom arrow */
+            background-repeat: no-repeat;
+            background-position: right 10px center;
+            padding-right: 30px; /* Adjust for arrow width */
+        }
+
+        .gender-group {
+            margin-bottom: 15px; /* Increased margin */
+            color: #FFFFFF; /* White gender labels */
+        }
+
+        .gender-group label {
+            display: inline-block;
+            margin-right: 15px; /* Increased margin */
+        }
+
+        button {
+            background-color: #CC0066; /* Purple button */
+            color: white;
+            padding: 12px 20px; /* Increased padding */
+            border: none;
+            border-radius: 5px; /* More rounded corners */
+            cursor: pointer;
+            width: 100%; /* Full width button */
+        }
+
+        button:hover {
+            background-color: #AA0055; /* Darker purple on hover */
+        }
+
+        /* Added styles for error messages */
+        .error {
+            color: #FF6666; /* Red error text */
+            margin-top: 5px;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Registration Form</h2>
+        <form action="#" method="post" id="registrationForm">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+            <div id="nameError" class="error"></div><br><br>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+            <div id="emailError" class="error"></div><br><br>
+
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required>
+            <div id="passwordError" class="error"></div><br><br>
+
+            <label for="phone">Phone Number:</label>
+            <input type="tel" id="phone" name="phone" required>
+            <div id="phoneError" class="error"></div><br><br>
+
+            <div class="gender-group">
+                <label>Gender:</label>
+                <label for="male">
+                    <input type="radio" id="male" name="gender" value="male" required> Male
+                </label>
+                <label for="female">
+                    <input type="radio" id="female" name="gender" value="female"> Female
+                </label>
+                <label for="other">
+                    <input type="radio" id="other" name="gender" value="other"> Other
+                </label>
+                <div id="genderError" class="error"></div>
+            </div><br>
+
+            <label for="language">Language:</label>
+            <select id="language" name="language">
+                <option value="english">English</option>
+                <option value="spanish">Spanish</option>
+            </select><br><br>
+
+            <label for="zip">Zip Code:</label>
+            <input type="number" id="zip" name="zip" required>
+            <div id="zipError" class="error"></div><br><br>
+
+            <label for="about">About:</label>
+            <textarea id="about" name="about" rows="4"></textarea><br><br>
+
+            <button type="submit">Register</button>
+        </form>
+    </div>
+
+    <script>
+        document.getElementById('registrationForm').addEventListener('submit', function(event) {
+            // Reset error messages
+            resetErrors();
+
+            // Perform validation
+            let isValid = true;
+
+            if (document.getElementById('name').value.trim() === "") {
+                showError('nameError', 'Name is required');
+                isValid = false;
+            }
+
+            if (document.getElementById('email').value.trim() === "") {
+                showError('emailError', 'Email is required');
+                isValid = false;
+            } else if (!isValidEmail(document.getElementById('email').value)) {
+                showError('emailError', 'Invalid email format');
+                isValid = false;
+            }
+
+            if (document.getElementById('password').value.trim() === "") {
+                showError('passwordError', 'Password is required');
+                isValid = false;
+            }
+
+            if (document.getElementById('phone').value.trim() === "") {
+                showError('phoneError', 'Phone number is required');
+                isValid = false;
+            }
+
+            if (!document.querySelector('input[name="gender"]:checked')) {
+                showError('genderError', 'Gender is required');
+                isValid = false;
+            }
+
+            if (document.getElementById('zip').value.trim() === "") {
+                showError('zipError', 'Zip code is required');
+                isValid = false;
+            }
+
+            if (!isValid) {
+                event.preventDefault(); // Prevent form submission
+            }
+        });
+
+        function showError(errorId, message) {
+            document.getElementById(errorId).textContent = message;
+        }
+
+        function resetErrors() {
+            let errorElements = document.getElementsByClassName('error');
+            for (let i = 0; i < errorElements.length; i++) {
+                errorElements[i].textContent = "";
+            }
+        }
+
+        function isValidEmail(email) {
+            // Basic email validation regex
+            const re = /^[^@]+@[^@]+\.[^@]+$/;
+            return re.test(email);
+        }
+    </script>
+
+</body>
+</html>
