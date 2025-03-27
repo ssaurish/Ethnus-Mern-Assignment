@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Centered Form Validation</title>
+</head>
+<body style="display: flex; justify-content: center; align-items: center; height: 100vh; background-color: #f4f4f4;">
+
+    <div style="background: white; padding: 20px; border-radius: 8px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); width: 300px; text-align: center;">
+        <h2 style="margin-bottom: 20px;">Contact Form</h2>
+        <form onsubmit="return validateForm()">
+            <label>Name:</label><br>
+            <input type="text" id="name" style="width: 100%; padding: 8px; margin: 5px 0; border: 1px solid black; border-radius: 4px;">
+            <span id="nameError" style="color: red; font-size: 12px;"></span>
+            <br><br>
+
+            <label>Email:</label><br>
+            <input type="text" id="email" style="width: 100%; padding: 8px; margin: 5px 0; border: 1px solid black; border-radius: 4px;">
+            <span id="emailError" style="color: red; font-size: 12px;"></span>
+            <br><br>
+
+            <label>Website:</label><br>
+            <input type="text" id="website" style="width: 100%; padding: 8px; margin: 5px 0; border: 1px solid black; border-radius: 4px;">
+            <span id="websiteError" style="color: red; font-size: 12px;"></span>
+            <br><br>
+
+            <label>Message:</label><br>
+            <textarea id="message" style="width: 100%; padding: 8px; margin: 5px 0; border: 1px solid black; border-radius: 4px;"></textarea>
+            <span id="messageError" style="color: red; font-size: 12px;"></span>
+            <br><br>
+
+            <input type="submit" value="Submit" style="background: #28a745; color: white; border: none; padding: 10px 15px; cursor: pointer; width: 100%; border-radius: 4px;">
+        </form>
+    </div>
+
+    <script>
+        function validateForm() {
+            let isValid = true;
+
+            // Name validation
+            let name = document.getElementById("name");
+            let nameError = document.getElementById("nameError");
+            if (name.value.trim() === "") {
+                nameError.innerText = "This field is required";
+                name.style.border = "2px solid red";
+                isValid = false;
+            } else {
+                nameError.innerText = "";
+                name.style.border = "1px solid black";
+            }
+
+            // Email validation
+            let email = document.getElementById("email");
+            let emailError = document.getElementById("emailError");
+            let emailPattern = /^\S+@\S+\.\S+$/;
+            if (!email.value.match(emailPattern)) {
+                emailError.innerText = "A valid email address is required";
+                email.style.border = "2px solid red";
+                isValid = false;
+            } else {
+                emailError.innerText = "";
+                email.style.border = "1px solid black";
+            }
+
+            // Website validation
+            let website = document.getElementById("website");
+            let websiteError = document.getElementById("websiteError");
+            let urlPattern = /^(https?:\/\/)?([\w.-]+)\.([a-z]{2,6})(\/\S*)?$/;
+            if (!website.value.match(urlPattern)) {
+                websiteError.innerText = "A valid URL is required";
+                website.style.border = "2px solid red";
+                isValid = false;
+            } else {
+                websiteError.innerText = "";
+                website.style.border = "1px solid black";
+            }
+
+            // Message validation
+            let message = document.getElementById("message");
+            let messageError = document.getElementById("messageError");
+            if (message.value.trim() === "") {
+                messageError.innerText = "This field is required";
+                message.style.border = "2px solid red";
+                isValid = false;
+            } else {
+                messageError.innerText = "";
+                message.style.border = "1px solid black";
+            }
+
+            return isValid;
+        }
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to right, #fbd3e9, #bbd2c5);
+            padding: 20px;
+        }
+        .container {
+            max-width: 700px;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            margin: auto;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+        }
+        h2 {
+            text-align: center;
+            color: blue;
+        }
+        label {
+            display: inline-block;
+            width: 150px;
+            font-weight: bold;
+        }
+        input, select, textarea {
+            padding: 8px;
+            width: 60%;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .error {
+            color: red;
+            margin-left: 10px;
+        }
+        .gender, .languages {
+            display: inline-block;
+            margin-right: 10px;
+        }
+        .submit-btn {
+            background-color: red;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        .submit-btn:hover {
+            background-color: darkred;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h2>Registration form</h2>
+        <form id="registrationForm">
+            <label>First Name:</label><input type="text" id="firstName"><span class="error" id="firstNameError"> POOR</span><br>
+            <label>Last Name:</label><input type="text" id="lastName"><span class="error" id="lastNameError"> POOR</span><br>
+            <label>Email:</label><input type="email" id="email"><span class="error" id="emailError"> POOR</span><br>
+            <label>Password:</label><input type="password" id="password"><span class="error" id="passwordError"> POOR</span><br>
+            <label>Re-enter Password:</label><input type="password" id="repassword"><span class="error" id="repasswordError"> POOR OR MISMATCH</span><br>
+            <label>Gender:</label>
+            <input type="radio" name="gender" value="Male" class="gender"> Male
+            <input type="radio" name="gender" value="Female" class="gender"> Female<br>
+            <label>Age:</label><input type="number" id="age"><span class="error" id="ageError"> POOR</span><br>
+            <label>Phone Number:</label><input type="text" id="phoneNumber"><span class="error" id="phoneError"> POOR</span><br>
+            <label>Address:</label><textarea id="address"></textarea><span class="error" id="addressError"> POOR</span><br>
+            <label>State:</label><input type="text" id="state"><span class="error" id="stateError"> POOR</span><br>
+            <label>Country:</label>
+            <select id="country">
+                <option>Choose your country</option>
+                <option>USA</option>
+                <option>India</option>
+                <option>UK</option>
+            </select><br>
+            <label>Languages known:</label>
+            <input type="checkbox" class="languages" value="English"> English
+            <input type="checkbox" class="languages" value="Kannada"> Kannada
+            <input type="checkbox" class="languages" value="Hindi"> Hindi
+            <input type="checkbox" class="languages" value="Telugu"> Telugu<br>
+            <input type="checkbox" id="declaration"> Hereby I declare all the given details are true<br>
+            <br>
+            <button type="submit" class="submit-btn">REGISTER</button>
+        </form>
+    </div>
+
+    <script>
+        document.getElementById("registrationForm").addEventListener("submit", function(event) {
+            event.preventDefault();
+            alert("Form submitted successfully!");
+        });
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multiplication & Division</title>
+</head>
+<body>
+    <script>
+        let container = document.createElement("div");
+
+        let num1Label = document.createElement("label");
+        num1Label.innerText = "1st Number: ";
+        let num1Input = document.createElement("input");
+        num1Input.type = "number";
+        num1Input.id = "num1";
+
+        let num2Label = document.createElement("label");
+        num2Label.innerText = "2nd Number: ";
+        let num2Input = document.createElement("input");
+        num2Input.type = "number";
+        num2Input.id = "num2";
+
+        let multiplyBtn = document.createElement("button");
+        multiplyBtn.innerText = "Multiply";
+        multiplyBtn.onclick = function() { calculate("multiply"); };
+
+        let divideBtn = document.createElement("button");
+        divideBtn.innerText = "Divide";
+        divideBtn.onclick = function() { calculate("divide"); };
+
+        let resultText = document.createElement("p");
+        resultText.innerHTML = "The Result Is: <span id='result'></span>";
+
+        container.appendChild(num1Label);
+        container.appendChild(num1Input);
+        container.appendChild(document.createElement("br"));
+        container.appendChild(num2Label);
+        container.appendChild(num2Input);
+        container.appendChild(document.createElement("br"));
+        container.appendChild(multiplyBtn);
+        container.appendChild(divideBtn);
+        container.appendChild(document.createElement("br"));
+        container.appendChild(resultText);
+
+        document.body.appendChild(container);
+
+        function calculate(operation) {
+            let num1 = parseFloat(document.getElementById("num1").value);
+            let num2 = parseFloat(document.getElementById("num2").value);
+            let result = operation === "multiply" ? num1 * num2 : num2 !== 0 ? num1 / num2 : "Cannot divide by zero";
+            document.getElementById("result").innerText = result;
+        }
+    </script>
+</body>
+</html>

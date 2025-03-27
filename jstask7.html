@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smooth Looping Train</title>
+    <style>
+        body {
+            text-align: center;
+            font-family: Arial, sans-serif;
+        }
+        .train-container {
+            width: 100%;
+            height: 200px;
+            overflow: hidden;
+            position: relative;
+            margin-top: 20px;
+        }
+        .train {
+            position: absolute;
+            left: 0;
+            top: 50px;
+            width: 200px;
+            transition: opacity 0.5s ease-in-out;
+        }
+        .buttons {
+            margin-top: 20px;
+        }
+        button {
+            padding: 10px 20px;
+            margin: 5px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+    <h2 style="color: blue;">Click the following buttons to handle animation</h2>
+
+    <div class="train-container">
+        <img src="https://www.clipartmax.com/png/middle/61-612976_cartoon-steam-locomotive-green-steam-train-clip-art.png" class="train" id="train">
+    </div>
+
+    <div class="buttons">
+        <button onclick="startTrain()">Start</button>
+        <button onclick="stopTrain()">Stop</button>
+    </div>
+
+    <script>
+        let train = document.getElementById("train");
+        let position = 0;
+        let speed = 5;
+        let trainAnimation;
+        let isRunning = false;
+
+        function moveTrain() {
+            if (!isRunning) return;
+            position += speed;
+            if (position > window.innerWidth) {
+                train.style.opacity = "0";
+                setTimeout(() => {
+                    position = -200;
+                    train.style.opacity = "1";
+                }, 500);
+            }
+            train.style.left = position + "px";
+            trainAnimation = requestAnimationFrame(moveTrain);
+        }
+
+        function startTrain() {
+            if (!isRunning) {
+                isRunning = true;
+                moveTrain();
+            }
+        }
+
+        function stopTrain() {
+            isRunning = false;
+            cancelAnimationFrame(trainAnimation);
+        }
+    </script>
+
+</body>
+</html>
